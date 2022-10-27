@@ -1,7 +1,10 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-
+import java.util.jar.JarEntry;
+import java.io.File;
+import java.io.IOException;
+import java.io.Reader;
 public class App {
     public static void main(String[] args) throws Exception {
 
@@ -66,6 +69,12 @@ public class App {
             codice += Integer.parseInt(ggnascita.substring(0, 2)) +40;
         else
             codice += Integer.parseInt(ggnascita.substring(0, 2)) +40;
+
+            File myObj = new File("comuni.txt");
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+              String data = myReader.nextLine();
+              System.out.println(data);}
 
         System.out.println(codice.toUpperCase());
     }
